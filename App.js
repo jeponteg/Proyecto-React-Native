@@ -4,6 +4,7 @@ import RootNavigation from './src/navigation.js/RootNavigation';
 import firebase from './src/utils/firebase' 
 import "firebase/auth"
 import AuthNavigation from './src/navigation.js/AuthNavigation';
+import  MoviesContex  from './src/contexts/MoviesContext';
 
 const App = () => {
 
@@ -17,11 +18,16 @@ const App = () => {
   },[]);
 
  if( user === undefined) return null;
+ 
+ const root = user ? <RootNavigation/> : <AuthNavigation/>
 
   return (
+    
     <NavigationContainer>
-      {user ? <RootNavigation/> : <AuthNavigation/>}
-    </NavigationContainer>
+      <MoviesContex>
+        {root}
+      </MoviesContex>
+    </NavigationContainer> 
   );
 };
 
