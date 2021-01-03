@@ -43,7 +43,6 @@ const LoginForm = ({ChangeForm}) => {
             errors.email= true;
         }else{
             firebase.auth().signInWithEmailAndPassword(formData.email,formData.password).then(()=>{
-                console.log('Sesión iniciada')
             }).catch(()=>{
                 setFormError({
                     email:true,
