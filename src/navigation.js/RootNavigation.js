@@ -1,5 +1,4 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './DrawerContent';
 import StackNavigation from './StackNavigation';
@@ -14,13 +13,10 @@ const RootNavigation = () => {
             drawerContent = {(props) => <DrawerContent {...props}/>}
         >
             <Drawer.Screen name="Home" component={StackNavigation} />
-        
+
         </Drawer.Navigator>
-        
-       
     )
 }
 
 export default RootNavigation
 
-const styles = StyleSheet.create({})

@@ -1,11 +1,18 @@
 import React, {useEffect,useContext} from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, View,SafeAreaView } from 'react-native'
 import  getNewsMovieApi  from '../../api/movies'
 import PopularMovies from '../../components/Movies/PopularMovies'
 import { MoviesContex } from '../../contexts/MoviesContext'
 
-const Home = () => {
+const styles = StyleSheet.create({
+    container:{
+        backgroundColor:'#1B1B1D',
+        width:'100%',
+    },
+})
 
+const Home = () => {
+    
     const {movies,setMovies} = useContext(MoviesContex)
 
     useEffect(() => {
@@ -15,30 +22,16 @@ const Home = () => {
     }, []);
 
     return (
-        <>
-        <View style={styles.view}>
+        <SafeAreaView style={styles.container}>
             {movies && (
-                <View style={styles.new}>
-                    <Text>Nuevas Peliculas</Text>
+                <View>
                     <PopularMovies/>
                 </View>
             )}
-        </View>
-        </>
+        </SafeAreaView>
     )
 }
 
 export default Home
 
-const styles = StyleSheet.create({
-    new:{
-        marginVertical:10,
-        backgroundColor:'#1B1B1D'
-        
-    },
-    view:{
-        flex: 1,
-        backgroundColor:'#1B1B1D'
-    },
-})
 

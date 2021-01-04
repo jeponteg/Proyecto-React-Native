@@ -5,21 +5,16 @@ import SignOff from '../components/Auth/SignOff';
 
 const DrawerContent = ({navigation}) => {
     
-    return (
-        
+    return ( 
         <DrawerContentScrollView>
-
             <SafeAreaView>
                 <DrawerItem
                     label= "Inicio"
                     onPress={() => navigation.navigate('home')}
                 />
                 <SignOff/>
-
             </SafeAreaView>
-
-        </DrawerContentScrollView>
-           
+        </DrawerContentScrollView>     
     )
 }
 

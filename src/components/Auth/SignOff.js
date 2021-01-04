@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { View, Button } from 'react-native'
 import 'firebase/auth'
 import firebase from '../../utils/firebase'
 
@@ -16,4 +16,4 @@ const SignOff = () => {
 
 export default SignOff
 
-const styles = StyleSheet.create({})
+
