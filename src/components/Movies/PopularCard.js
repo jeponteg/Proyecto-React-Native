@@ -1,15 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
     card:{ 
-        flex:1
+        flex:1,
     },
     image:{
         width:'90%',
         height:410,
-        borderRadius:20,
+        borderRadius:10,
         marginHorizontal:20,
         marginTop:10, 
     },
@@ -17,13 +18,19 @@ const styles = StyleSheet.create({
         marginHorizontal:10,
         marginTop:10,
         textAlign:'center',
-        color:'white'
+        color:'white',
+        marginBottom:20
     }
 })
 
-const PopularCard = ({title,poster_path,handleInformation}) => {
+const PopularCard = ({id,title,poster_path}) => {
 
     const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
+    const navigation = useNavigation();
+
+    const handleInformation = () => {
+        navigation.navigate('information',{id})
+    }
     
     return (
         <TouchableOpacity

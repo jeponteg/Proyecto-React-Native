@@ -4,7 +4,9 @@ import RootNavigation from './src/navigation.js/RootNavigation';
 import firebase from './src/utils/firebase' 
 import "firebase/auth"
 import AuthNavigation from './src/navigation.js/AuthNavigation';
-import  MoviesContex  from './src/contexts/MoviesContext';
+import MoviesContex from './src/contexts/MoviesContext';
+import  MoviesIdContex  from './src/contexts/MoviesIdContext';
+
 
 const App = () => {
 
@@ -13,7 +15,6 @@ const App = () => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((response) =>{
        setUser(response);
-       console.log(response)
     })
   },[]);
 
@@ -24,9 +25,11 @@ const App = () => {
   return (
     
     <NavigationContainer>
-      <MoviesContex>
-        {root}
-      </MoviesContex>
+      <MoviesIdContex>
+        <MoviesContex>
+          {root}
+        </MoviesContex>
+      </MoviesIdContex>
     </NavigationContainer> 
   );
 };

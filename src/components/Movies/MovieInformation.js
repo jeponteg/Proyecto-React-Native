@@ -1,42 +1,40 @@
 import React,{useContext} from 'react'
-import { StyleSheet, FlatList, View } from 'react-native'
-import { MoviesContex } from '../../contexts/MoviesContext'
-import PopularCard from '../../components/Movies/PopularCard' 
+import { StyleSheet, FlatList } from 'react-native'
+import  { MoviesIdContex }  from '../../contexts/MoviesIdContext'
+import InformationCard from '../../components/Movies/InformationCard' 
 
 const styles = StyleSheet.create({
     flatListContainer: {
-      padding: 10,
       width: '100%',
       height:'100%', 
     },
 });
 
-const PopularMovies = () => {
+const MovieInformation = () => {
 
-    const {movies} = useContext(MoviesContex)
+    const {idmovies} = useContext(MoviesIdContex)
     
     return (
-        <View style={styles.bo}>
+        <>
             <FlatList
                 style={styles.flatListContainer}
-                data={movies}
+                data={idmovies}
                 keyExtractor={({id}) => id.toString()}
                 renderItem={({
-                item: {id,title,poster_path},
+                item: {id,title,overview,poster_path},
                 }) => (
-                    <PopularCard
+                    <InformationCard
                         id={id}
                         title={title}
                         poster_path= {poster_path}
+                        overview={overview}
                     />
                 )}
             />
-       </View>
+        </>
     )
 }
 
-export default PopularMovies
-
-
+export default MovieInformation
 
 

@@ -18,7 +18,7 @@ const StackNavigation = () => {
             <Stack.Screen 
             	name='information' 
                 component={Information} 
-                options={{title:"Información"}}>
+                options={{title:"",headerTransparent:"true"}}>
             </Stack.Screen> 
 
         </Stack.Navigator>

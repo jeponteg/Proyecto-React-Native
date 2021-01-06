@@ -1,14 +1,38 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, {useEffect,useContext} from 'react'
+import { StyleSheet, View,SafeAreaView } from 'react-native'
+import  getMovieById  from '../../api/getMovieById'
+import MovieInformation from '../../components/Movies/MovieInformation'
+import  { MoviesIdContex }  from '../../contexts/MoviesIdContext'
 
-const Information = () => {
+const styles = StyleSheet.create({
+    container:{
+        backgroundColor:'#1B1B1D',
+        width:'100%',
+    },
+})
+
+const Information = ({route}) => {
+    
+    const {idmovies,setIdmovies} = useContext(MoviesIdContex)
+
+    const { id } = route.params;
+    
+    useEffect(() => {
+        getMovieById(id).then((response) => {
+            setIdmovies([response])
+        });
+    }, []);
+    
     return (
-        <View>
-            <Text>Información de Pelicuas</Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+            {idmovies && (
+                <View>
+                    <MovieInformation/>
+                </View>
+            )}
+        </SafeAreaView>
     )
 }
 
 export default Information
 
-const styles = StyleSheet.create({})
