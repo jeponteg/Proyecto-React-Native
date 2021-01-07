@@ -30,6 +30,9 @@ const Information = ({route}) => {
                     <MovieInformation/>
                 </View>
             )}
+            <View>
+                    
+            </View>
         </SafeAreaView>
     )
 }

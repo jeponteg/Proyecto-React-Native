@@ -5,8 +5,8 @@ import firebase from './src/utils/firebase'
 import "firebase/auth"
 import AuthNavigation from './src/navigation.js/AuthNavigation';
 import MoviesContex from './src/contexts/MoviesContext';
-import  MoviesIdContex  from './src/contexts/MoviesIdContext';
-
+import MoviesIdContex  from './src/contexts/MoviesIdContext';
+import MoldalVideoContex from './src/contexts/MoldalVideoContext'
 
 const App = () => {
 
@@ -25,11 +25,13 @@ const App = () => {
   return (
     
     <NavigationContainer>
-      <MoviesIdContex>
-        <MoviesContex>
-          {root}
-        </MoviesContex>
-      </MoviesIdContex>
+      <MoldalVideoContex>
+        <MoviesIdContex>
+          <MoviesContex>
+            {root}
+          </MoviesContex>
+        </MoviesIdContex>
+      </MoldalVideoContex>  
     </NavigationContainer> 
   );
 };

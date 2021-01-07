@@ -40,6 +40,7 @@ const PopularCard = ({id,title,poster_path}) => {
                 <Image style={styles.image} source={{uri:imageUrl}}/>
                 <Text style={styles.title}>{title}</Text>
             </View>
+            
         </TouchableOpacity>
     )
 }
