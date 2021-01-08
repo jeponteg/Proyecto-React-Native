@@ -1,6 +1,10 @@
 import React, {useContext} from 'react'
-import { Alert, Modal, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { Modal, StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { MoldalVideoContex } from '../../contexts/MoldalVideoContext'
+import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import { WebView } from 'react-native-webview';
+import { VideoIdContex } from '../../contexts/VideoIdContext';
+
 
 const styles = StyleSheet.create({
     centeredView: {
@@ -9,11 +13,11 @@ const styles = StyleSheet.create({
       alignItems: "center",
     },
     modalView: {
+      justifyContent:'flex-end',
       width:'100%',
       height:'100%',
       margin: 20,
-      backgroundColor: "white",
-      borderRadius: 20,
+      backgroundColor: "black",
       padding: 35,
       alignItems: "center",
       shadowColor: "#000",
@@ -26,10 +30,8 @@ const styles = StyleSheet.create({
       elevation: 5
     },
     openButton: {
-      backgroundColor: "#F194FF",
       borderRadius: 20,
       padding: 10,
-      elevation: 2
     },
     textStyle: {
       color: "white",
@@ -39,13 +41,17 @@ const styles = StyleSheet.create({
     modalText: {
       marginBottom: 15,
       textAlign: "center"
+    },
+    video:{
+      alignSelf:'stretch',
+      height:300
     }
   });
   
 const ModalVideo = () => {
-
+  
     const {modalVisible, setModalVisible} = useContext(MoldalVideoContex)
-
+    const {video, setVideo} = useContext(VideoIdContex)
     return (
         <View style={styles.centeredView}>
           <Modal
@@ -53,20 +59,20 @@ const ModalVideo = () => {
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
             }}
           >
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
-                <Text style={styles.modalText}>Hello World!</Text>
-    
+              <WebView
+                style={{width:500,}} 
+                source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}/>
                 <TouchableHighlight
-                  style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
                   onPress={() => {
                     setModalVisible(!modalVisible);
                   }}
                 >
-                  <Text style={styles.textStyle}>Hide Modal</Text>
+                   <IconAntDesign name="closecircle" color="white" size={40}/>
                 </TouchableHighlight>
               </View>
             </View>
@@ -78,13 +84,14 @@ const ModalVideo = () => {
               setModalVisible(true);
             }}
           >
-            <Text style={styles.textStyle}>Show Modal</Text>
+            <IconAntDesign name="caretright" color="white" size={80}/>
+
           </TouchableHighlight>
         </View>
     );
 };
 
-    export default ModalVideo
+export default ModalVideo
     
     
     

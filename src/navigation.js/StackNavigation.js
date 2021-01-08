@@ -12,7 +12,7 @@ const StackNavigation = () => {
             <Stack.Screen 
             	name='home' 
                 component={Home} 
-                options={{title:"AppMovies"}}>
+                options={{title:"Películas Populares"}}>
             </Stack.Screen> 
 
             <Stack.Screen 

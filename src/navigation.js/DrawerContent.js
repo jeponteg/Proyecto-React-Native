@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer' 
 import SignOff from '../components/Auth/SignOff';
 
@@ -19,5 +19,3 @@ const DrawerContent = ({navigation}) => {
 }
 
 export default DrawerContent
-
-const styles = StyleSheet.create({})

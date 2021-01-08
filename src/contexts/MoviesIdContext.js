@@ -4,7 +4,7 @@ export const MoviesIdContex = createContext ();
 
 const MoviesIdContext = ({children}) => {
 
-    const [idmovies, setIdmovies] = useState([])
+    const [idmovies, setIdmovies] = useState(null)
 
     return (
         <MoviesIdContex.Provider

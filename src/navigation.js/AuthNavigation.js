@@ -1,5 +1,4 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import Auth from '../screens/Auth/Auth';
 
@@ -16,4 +15,3 @@ const AuthNavigation = () => {
 
 export default AuthNavigation
 
-const styles = StyleSheet.create({})

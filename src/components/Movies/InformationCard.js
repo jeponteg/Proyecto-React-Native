@@ -4,14 +4,15 @@ import { BASE_PATH_IMG } from '../../api/constants'
 import ModalVideo from './ModalVideo'
 
 const styles = StyleSheet.create({
+    
     card:{ 
         flex:1,
     },
     image:{
         width:'100%',
-        height:650,
-        borderBottomLeftRadius:50,
-        borderBottomRightRadius:50
+        height:550,
+        borderBottomLeftRadius:100,
+        borderBottomRightRadius:100
     },
     title:{
         marginHorizontal:10,
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
           alignItems:'flex-end',
           marginHorizontal:20,
       }
-    
 })
 
 const InformationCard = ({id,title,overview,poster_path}) => {

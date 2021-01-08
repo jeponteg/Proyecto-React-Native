@@ -7,6 +7,7 @@ import AuthNavigation from './src/navigation.js/AuthNavigation';
 import MoviesContex from './src/contexts/MoviesContext';
 import MoviesIdContex  from './src/contexts/MoviesIdContext';
 import MoldalVideoContex from './src/contexts/MoldalVideoContext'
+import VideoIdContex  from './src/contexts/VideoIdContext';
 
 const App = () => {
 
@@ -26,11 +27,13 @@ const App = () => {
     
     <NavigationContainer>
       <MoldalVideoContex>
-        <MoviesIdContex>
-          <MoviesContex>
-            {root}
-          </MoviesContex>
-        </MoviesIdContex>
+        <VideoIdContex> 
+          <MoviesIdContex>
+            <MoviesContex>
+              {root}
+            </MoviesContex>
+          </MoviesIdContex>
+        </VideoIdContex>
       </MoldalVideoContex>  
     </NavigationContainer> 
   );

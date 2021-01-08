@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
         flex:1,
     },
     image:{
-        width:'90%',
+        width:'100%',
         height:410,
         borderRadius:10,
-        marginHorizontal:20,
+        
         marginTop:10, 
     },
     title:{
@@ -40,7 +40,7 @@ const PopularCard = ({id,title,poster_path}) => {
                 <Image style={styles.image} source={{uri:imageUrl}}/>
                 <Text style={styles.title}>{title}</Text>
             </View>
-            
+         
         </TouchableOpacity>
     )
 }
