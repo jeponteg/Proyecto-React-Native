@@ -5,7 +5,6 @@ import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import { WebView } from 'react-native-webview';
 import { VideoIdContex } from '../../contexts/VideoIdContext';
 
-
 const styles = StyleSheet.create({
     centeredView: {
       flex: 1,
@@ -21,37 +20,17 @@ const styles = StyleSheet.create({
       padding: 35,
       alignItems: "center",
       shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5
     },
     openButton: {
-      borderRadius: 20,
+      borderRadius: 100,
       padding: 10,
     },
-    textStyle: {
-      color: "white",
-      fontWeight: "bold",
-      textAlign: "center"
-    },
-    modalText: {
-      marginBottom: 15,
-      textAlign: "center"
-    },
-    video:{
-      alignSelf:'stretch',
-      height:300
-    }
   });
   
 const ModalVideo = () => {
   
     const {modalVisible, setModalVisible} = useContext(MoldalVideoContex)
-    const {video, setVideo} = useContext(VideoIdContex)
+    const {video} = useContext(VideoIdContex)
     return (
         <View style={styles.centeredView}>
           <Modal
@@ -68,6 +47,7 @@ const ModalVideo = () => {
                 style={{width:500,}} 
                 source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}/>
                 <TouchableHighlight
+                style={styles.openButton}
                   onPress={() => {
                     setModalVisible(!modalVisible);
                   }}

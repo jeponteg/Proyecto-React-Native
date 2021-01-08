@@ -1,42 +1,36 @@
 import React,{useContext} from 'react'
-import { StyleSheet, FlatList, View } from 'react-native'
+import { Dimensions,} from 'react-native'
+import Carousel from 'react-native-snap-carousel'
 import { MoviesContex } from '../../contexts/MoviesContext'
-import PopularCard from '../../components/Movies/PopularCard' 
+import PopularCard from './PopularCard'
 
-const styles = StyleSheet.create({
-    flatListContainer: {
-      padding: 10,
-      width: '100%',
-      height:'100%', 
-    },
-});
+const {width} = Dimensions.get('window');
+const ITEM_WIDTH = Math.round(width * 0.7)
 
-const PopularMovies = () => {
+ const PopularMovies = ()=> {
 
     const {movies} = useContext(MoviesContex)
-    
+   
     return (
-        <View style={styles.bo}>
-            <FlatList
-                style={styles.flatListContainer}
-                data={movies}
-                keyExtractor={({id}) => id.toString()}
-                renderItem={({
-                item: {id,title,poster_path},
-                }) => (
-                    <PopularCard
-                        id={id}
-                        title={title}
-                        poster_path= {poster_path}
-                    />
-                )}
-            />
-       </View>
+        <Carousel
+            layout={'default'}
+            data={movies}
+            sliderWidth= {width}
+            itemWidth = {ITEM_WIDTH}
+            renderItem={({
+            item: {id,title,poster_path},
+            })=> (
+                <PopularCard
+                    id={id}
+                    title={title}
+                    poster_path= {poster_path}
+                />
+            )}
+                
+        />
     )
 }
-
 export default PopularMovies
-
 
 
 

@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:'#1B1B1D',
         width:'100%',
+        flex:1
     },
 })
 
