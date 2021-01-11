@@ -1,7 +1,15 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native'
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer' 
-import SignOff from '../components/Auth/SignOff';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import firebase from '../../src/utils/firebase'
+import 'firebase/auth'
+
+const Logout = () =>{
+
+    firebase.auth().signOut();
+}
 
 const DrawerContent = ({navigation}) => {
     
@@ -12,7 +20,25 @@ const DrawerContent = ({navigation}) => {
                     label= "Inicio"
                     onPress={() => navigation.navigate('home')}
                 />
-                <SignOff/>
+                <DrawerItem
+                    label= "Perfil"
+                    onPress={() => navigation.navigate('user')}
+                />
+                <DrawerItem
+                    label= "Upcoming Movies"
+                    onPress={() => navigation.navigate('upcoming')}
+                    icon={()=>(
+                        <IconMaterialCommunityIcons name="movie-open" size={30} />
+                    )}
+                />
+                <DrawerItem
+                    label= "Sign off"
+                    onPress={Logout}
+                    icon={()=>(
+                        <Icon name="sign-out" size={30} />
+                    )}
+                />
+                
             </SafeAreaView>
         </DrawerContentScrollView>     
     )

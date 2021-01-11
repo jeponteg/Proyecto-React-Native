@@ -1,7 +1,7 @@
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './DrawerContent';
-import StackNavigation from './StackNavigation';
+import TabNavigation from './TabNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -12,7 +12,7 @@ const RootNavigation = () => {
             initialRouteName="Home" 
             drawerContent = {(props) => <DrawerContent {...props}/>}
         >
-            <Drawer.Screen name="Home" component={StackNavigation} />
+            <Drawer.Screen name="home" component={TabNavigation} />
 
         </Drawer.Navigator>
     )

@@ -23,7 +23,6 @@ const Information = ({route}) => {
     const {video, setVideo} = useContext(VideoIdContex)
     const { id } = route.params;
     
-    console.log(video)
     useEffect(() => {
 
         getVideoById(id).then((response) => {

@@ -1,4 +1,4 @@
-import { API_HOST, API_KEY, LANG  } from "./constants";
+import { API_HOST, API_KEY } from "./constants";
 
 const getVideoById = (idmovie) => {
 
