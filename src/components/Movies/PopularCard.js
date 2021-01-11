@@ -21,7 +21,10 @@ const styles = StyleSheet.create({
     },
     title:{
         marginHorizontal:10,
-        marginTop:10
+        marginTop:30,
+        color:'white',
+        fontSize:16,
+        textAlign:'center'
     }
 })
 

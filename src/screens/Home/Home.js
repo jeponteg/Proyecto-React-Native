@@ -1,8 +1,7 @@
-import React, {useEffect,useContext} from 'react'
+import React, {useEffect,useState} from 'react'
 import { StyleSheet, View,SafeAreaView } from 'react-native'
 import  getNewsMovieApi  from '../../api/movies'
-import PopularMovies from '../../components/Movies/PopularMovies'
-import { MoviesContex } from '../../contexts/MoviesContext'
+import Movies from '../../components/Movies/Movies'
 
 const styles = StyleSheet.create({
     container:{
@@ -13,8 +12,8 @@ const styles = StyleSheet.create({
 })
 
 const Home = () => {
-    
-    const {movies,setMovies} = useContext(MoviesContex)
+   
+    const [movies,setMovies] = useState([])
 
     useEffect(() => {
         getNewsMovieApi().then((response) => {
@@ -26,7 +25,7 @@ const Home = () => {
         <SafeAreaView style={styles.container}>
             {movies && (
                 <View>
-                    <PopularMovies/>
+                    <Movies movies={movies}/>
                 </View>
             )}
         </SafeAreaView>

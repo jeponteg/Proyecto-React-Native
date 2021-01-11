@@ -1,16 +1,13 @@
 import React,{useContext} from 'react'
 import { Dimensions,} from 'react-native'
 import Carousel from 'react-native-snap-carousel'
-import { MoviesContex } from '../../contexts/MoviesContext'
 import PopularCard from './PopularCard'
 
 const {width} = Dimensions.get('window');
 const ITEM_WIDTH = Math.round(width * 0.7)
 
- const PopularMovies = ()=> {
+ const Movies = ({movies})=> {
 
-    const {movies} = useContext(MoviesContex)
-   
     return (
         <Carousel
             layout={'default'}
@@ -30,7 +27,7 @@ const ITEM_WIDTH = Math.round(width * 0.7)
         />
     )
 }
-export default PopularMovies
+export default Movies
 
 
 

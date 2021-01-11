@@ -1,4 +1,4 @@
-import  React, {useEffect,useContext} from 'react'
+import  React, {useEffect,useContext } from 'react'
 import  { StyleSheet, View,SafeAreaView } from 'react-native'
 import  getMovieById  from '../../api/getMovieById'
 import getVideoById from '../../api/getVideoById'

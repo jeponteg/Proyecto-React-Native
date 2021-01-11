@@ -16,14 +16,7 @@ const DrawerContent = ({navigation}) => {
     return ( 
         <DrawerContentScrollView>
             <SafeAreaView>
-                <DrawerItem
-                    label= "Inicio"
-                    onPress={() => navigation.navigate('home')}
-                />
-                <DrawerItem
-                    label= "Perfil"
-                    onPress={() => navigation.navigate('user')}
-                />
+               
                 <DrawerItem
                     label= "Upcoming Movies"
                     onPress={() => navigation.navigate('upcoming')}
