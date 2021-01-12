@@ -26,6 +26,14 @@ const DrawerContent = ({navigation}) => {
                 <View style={styles.photo}>
                     <AddPhoto/>
                 </View>
+
+                <DrawerItem
+                    label= "Edit Profile Photo"
+                    onPress={() => navigation.navigate('camera')}
+                    icon={()=>(
+                        <IconMaterialCommunityIcons name="camera" size={30} />
+                    )}
+                />
                 
                 <DrawerItem
                     label= "Upcoming Movies"

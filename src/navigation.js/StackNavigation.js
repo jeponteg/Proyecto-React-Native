@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Home from '../screens/Home/Home'
 import Information from '../screens/Home/Information'
 import UpcomingMovies from '../screens/Home/UpcomingMovies';
-import User from '../screens/User/User';
+import Camera from '../screens/Photo/Camera';
 
 
 const Stack =createStackNavigator()
@@ -44,14 +44,15 @@ const {navigation} = props;
             	name='information' 
                 component={Information} 
                 options={{title:"Movie information"}}>
-            </Stack.Screen> 
-
-            <Stack.Screen 
-            	name='user' 
-                component={User} 
-                options={{title:"Movie information"}}>
             </Stack.Screen>
 
+            <Stack.Screen 
+            	name='camera' 
+                component={Camera} 
+                options={{title:"Camara"}}>
+            </Stack.Screen> 
+
+           
         </Stack.Navigator>
     )
 }
