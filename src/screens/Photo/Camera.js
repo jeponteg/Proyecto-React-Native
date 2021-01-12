@@ -1,6 +1,8 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { RNCamera } from 'react-native-camera'
+import CameraInterface from '../../components/Photo/CameraInterface'
+import {useNavigation} from '@react-navigation/native';
 
 const PendingPreview = () =>{
     <View style={styles.pendingPreview}>
@@ -9,6 +11,17 @@ const PendingPreview = () =>{
 }
 
 const Camera = () => {
+    const navigation = useNavigation();
+    
+    const takePicture = async (camera) => {
+        const options = {quality: 0.4, base64: true};
+        const data = await camera.takePictureAsync(options);
+        if (data?.uri) {
+          console.log(data)
+          navigation.pop();
+        }
+      };
+
     return (
         <View style= {styles.container}>
            <RNCamera
@@ -22,7 +35,7 @@ const Camera = () => {
                    return <Text>Esperando</Text>;
                 }
                
-               return <View/>
+               return <CameraInterface takePicture={takePicture} camera={camera}/>
             }}
 
           </RNCamera>

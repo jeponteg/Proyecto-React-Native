@@ -7,7 +7,6 @@ import Information from '../screens/Home/Information'
 import UpcomingMovies from '../screens/Home/UpcomingMovies';
 import Camera from '../screens/Photo/Camera';
 
-
 const Stack =createStackNavigator()
 
 const StackNavigation = (props) => {
@@ -49,7 +48,7 @@ const {navigation} = props;
             <Stack.Screen 
             	name='camera' 
                 component={Camera} 
-                options={{title:"Camara"}}>
+                options={{title:" ",headerTransparent:true}}>
             </Stack.Screen> 
 
            
