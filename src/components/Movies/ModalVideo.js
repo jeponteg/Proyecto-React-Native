@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import { Modal, StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { MoldalVideoContex } from '../../contexts/MoldalVideoContext'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import IconOcticons from 'react-native-vector-icons/Octicons';
 import { WebView } from 'react-native-webview';
 import { VideoIdContex } from '../../contexts/VideoIdContext';
 
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     openButton: {
       borderRadius: 100,
       padding: 10,
+      marginTop:80
     },
   });
   
@@ -64,7 +66,7 @@ const ModalVideo = () => {
               setModalVisible(true);
             }}
           >
-            <IconAntDesign name="caretright" color="white" size={80}/>
+            <IconOcticons name="device-camera-video" color="white" size={50}/>
 
           </TouchableHighlight>
         </View>

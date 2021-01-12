@@ -21,13 +21,15 @@ const MovieInformation = () => {
                 data={idmovies}
                 keyExtractor={({id}) => id.toString()}
                 renderItem={({
-                item: {id,title,overview,poster_path},
+                item: {id,title,overview,poster_path,vote_average,vote_count},
                 }) => (
                     <InformationCard
                         id={id}
                         title={title}
                         poster_path= {poster_path}
                         overview={overview}
+                        vote_count={vote_count}
+                        vote_average={vote_average}
                     />
                 )}
             />

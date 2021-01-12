@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View,Image } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
 import ModalVideo from './ModalVideo'
+import MovieRating from './MovieRating'
 
 const styles = StyleSheet.create({
     
@@ -11,14 +12,16 @@ const styles = StyleSheet.create({
     image:{
         width:'100%',
         height:550,
-        borderBottomLeftRadius:100,
-        borderBottomRightRadius:100
+        borderBottomLeftRadius:50,
+        borderBottomRightRadius:50
     },
     title:{
         marginHorizontal:10,
         marginTop:10,
         textAlign:'center',
         color:'white',
+        fontSize:16,
+        fontWeight:'bold'
     },
     overview: {
         marginHorizontal: 30,
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
       }
 })
 
-const InformationCard = ({id,title,overview,poster_path}) => {
+const InformationCard = ({id,title,overview,poster_path,vote_average,vote_count}) => {
 
     const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
     
@@ -48,6 +51,9 @@ const InformationCard = ({id,title,overview,poster_path}) => {
                 </View>
                 
                 <Text style={styles.title}>{title}</Text>
+
+                <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
+
                 <Text style={styles.overview}>{overview}</Text>
             </View>
         </>

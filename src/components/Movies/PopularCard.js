@@ -23,8 +23,9 @@ const styles = StyleSheet.create({
         marginHorizontal:10,
         marginTop:30,
         color:'white',
-        fontSize:16,
-        textAlign:'center'
+        fontSize:18,
+        textAlign:'center',
+        fontWeight:'bold'
     }
 })
 
