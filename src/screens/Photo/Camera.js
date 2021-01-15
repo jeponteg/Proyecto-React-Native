@@ -1,8 +1,28 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import CameraInterface from '../../components/Photo/CameraInterface'
 import {useNavigation} from '@react-navigation/native';
+import { ProfilePictureContex } from '../../contexts/ProfilePictureContext';
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        flexDirection:'column',
+        backgroundColor: 'black'
+    },
+    preview:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    pendingPreview:{
+        flex:1,
+        backgroundColor:'black',
+        justifyContent:'center',
+        alignItems:'center'
+    }
+})
 
 const PendingPreview = () =>{
     <View style={styles.pendingPreview}>
@@ -11,13 +31,17 @@ const PendingPreview = () =>{
 }
 
 const Camera = () => {
+
+    const {setPhoto} = useContext(ProfilePictureContex)
+
     const navigation = useNavigation();
     
     const takePicture = async (camera) => {
         const options = {quality: 0.4, base64: true};
         const data = await camera.takePictureAsync(options);
         if (data?.uri) {
-          console.log(data)
+            setPhoto(data?.uri)
+            console.log(data?.uri);
           navigation.pop();
         }
       };
@@ -45,21 +69,4 @@ const Camera = () => {
 
 export default Camera
 
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        flexDirection:'column',
-        backgroundColor: 'black'
-    },
-    preview:{
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center'
-    },
-    pendingPreview:{
-        flex:1,
-        backgroundColor:'black',
-        justifyContent:'center',
-        alignItems:'center'
-    }
-})
+

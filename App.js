@@ -6,6 +6,7 @@ import AuthNavigation from './src/navigation.js/AuthNavigation';
 import MoviesIdContex  from './src/contexts/MoviesIdContext';
 import MoldalVideoContex from './src/contexts/MoldalVideoContext'
 import VideoIdContex  from './src/contexts/VideoIdContext';
+import ProfilePictureContex  from './src/contexts/ProfilePictureContext';
 import "firebase/auth"
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
   return (
     
     <NavigationContainer>
-     
+      <ProfilePictureContex>
         <MoldalVideoContex>
           <VideoIdContex> 
             <MoviesIdContex>
@@ -35,7 +36,7 @@ const App = () => {
             </MoviesIdContex>
           </VideoIdContex>
         </MoldalVideoContex>
-       
+      </ProfilePictureContex>
     </NavigationContainer> 
   );
 };

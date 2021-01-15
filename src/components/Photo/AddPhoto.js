@@ -1,6 +1,7 @@
-import React from 'react'
-import {View, StyleSheet, TouchableHighlight, Image, Text} from 'react-native';
+import React,{useContext} from 'react'
+import {View, StyleSheet, TouchableHighlight, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { ProfilePictureContex } from '../../contexts/ProfilePictureContext';
 
 const styles = StyleSheet.create({
     container: {
@@ -29,25 +30,38 @@ const styles = StyleSheet.create({
       paddingTop: 15,
      
     },
+    imageFrame:{
+        width: 180,
+        height: 180,
+        borderRadius: 100,
+    }
   });
 
 const AddPhoto = () => {
 
+  const {photo} = useContext(ProfilePictureContex);
+   
+  const ImagePhoto = !photo ? (
+    <View>
+      <Icon 
+          name ="user-alt" 
+          color="white"
+          size={120}
+        />
+    </View>
+  ) : (
+    <Image style={styles.imageFrame} source={{uri:photo}} />
+  );
+
     return (
         <View style={styles.container}>
           <TouchableHighlight
-            
             style={styles.circleContainer}>
-            <Icon 
-                name ="user-alt" 
-                color="white"
-                size={120}
-            />
+            {ImagePhoto}
           </TouchableHighlight>
         </View>
       )
 }
 
 export default AddPhoto
-
 
