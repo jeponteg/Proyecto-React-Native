@@ -6,6 +6,7 @@ import Home from '../screens/Home/Home'
 import Information from '../screens/Home/Information'
 import UpcomingMovies from '../screens/Home/UpcomingMovies';
 import Camera from '../screens/Photo/Camera';
+import Search from '../screens/Home/Search';
 
 const Stack =createStackNavigator()
 
@@ -16,9 +17,23 @@ const {navigation} = props;
     const button = () => {
         return (
             <TouchableOpacity
+            style={{marginLeft:10}}
              onPress={() => navigation.openDrawer()}>
                 <IconAntDesign 
                     name="menu-fold" 
+                    size={30}
+                />
+            </TouchableOpacity> 
+        )
+    }
+
+    const buttonSearch = () => {
+        return (
+            <TouchableOpacity
+            style={{marginRight:15}}
+             onPress={() => navigation.navigate('search')}>
+                <IconAntDesign 
+                    name="search1" 
                     size={30}
                 />
             </TouchableOpacity> 
@@ -30,13 +45,20 @@ const {navigation} = props;
             <Stack.Screen 
             	name='home' 
                 component={Home} 
-                options={{title:"Popular Movies", headerLeft:() => button()}}>
+                options={{
+                    title:"Popular Movies",
+                    headerLeft:() => button(),
+                    headerRight:() => buttonSearch()
+                }}>
             </Stack.Screen>
 
             <Stack.Screen 
             	name='upcoming' 
                 component={UpcomingMovies} 
-                options={{title:"Upcoming Movies"}}>
+                options={{
+                    title:"Upcoming Movies", 
+                    headerRight:() => buttonSearch()
+                }}>
             </Stack.Screen> 
 
             <Stack.Screen 
@@ -44,6 +66,12 @@ const {navigation} = props;
                 component={Information} 
                 options={{title:"Movie information"}}>
             </Stack.Screen>
+
+            <Stack.Screen 
+            	name='search' 
+                component={Search} 
+                options={{title:"search Movie"}}>
+            </Stack.Screen> 
 
             <Stack.Screen 
             	name='camera' 

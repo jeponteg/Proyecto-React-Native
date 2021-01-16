@@ -5,7 +5,7 @@ import Movies from '../../components/Movies/Movies'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#1B1B1D',
+        backgroundColor:'#072231',
         width:'100%',
         flex:1
     },

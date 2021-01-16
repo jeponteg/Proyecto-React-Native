@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
     card:{
-        paddingTop:40,
+        paddingTop:20,
         shadowColor:'#000',
         shadowOffset:{
             width:0,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         },
         image:{
             width:'100%',
-            height:550,
+            height:500,
             borderRadius:20 
         },
         title:{
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         }
     })
 
-const PopularCard = ({id,title,poster_path}) => {
+const SearchCard = ({id,title,poster_path}) => {
     
     const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
     const navigation = useNavigation();
@@ -49,6 +49,6 @@ const PopularCard = ({id,title,poster_path}) => {
     )
 }
 
-export default PopularCard
+export default SearchCard
 
 
