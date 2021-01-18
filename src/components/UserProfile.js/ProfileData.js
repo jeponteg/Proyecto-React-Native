@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, View, TextInput,} from 'react-native'
 
 const styles = StyleSheet.create({
+
     perfil:{
         alignItems:'center',
     },
@@ -16,13 +17,9 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#1e3040',
     },
-    
-    register: {
-        flex:1,
-        justifyContent: 'flex-end',
-        marginBottom: 10,
-    }
+  
 })
+
 const ProfileData = () => {
     return (
         <View style={styles.perfil}>

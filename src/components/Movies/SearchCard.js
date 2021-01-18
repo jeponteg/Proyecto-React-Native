@@ -1,9 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity,Image, Dimensions } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
 import { useNavigation } from '@react-navigation/native';
 
+const {height} = Dimensions.get('window');
+const ITEM_HEIGHT = Math.round(height * 0.6)
 const styles = StyleSheet.create({
+
     card:{
         paddingTop:20,
         shadowColor:'#000',
@@ -14,20 +17,20 @@ const styles = StyleSheet.create({
         shadowOpacity:1,
         shadowRadius:10,
         },
-        image:{
-            width:'100%',
-            height:500,
-            borderRadius:20 
+    image:{
+        width:'100%',
+        height:500,
+        borderRadius:20 
         },
-        title:{
-            marginHorizontal:10,
-            marginTop:30,
-            color:'white',
-            fontSize:18,
-            textAlign:'center',
-            fontWeight:'bold'
-        }
-    })
+    title:{
+        marginHorizontal:10,
+        marginTop:30,
+        color:'white',
+        fontSize:18,
+        textAlign:'center',
+        fontWeight:'bold'
+    }
+})
 
 const SearchCard = ({id,title,poster_path}) => {
     
@@ -37,6 +40,7 @@ const SearchCard = ({id,title,poster_path}) => {
     const handleInformation = () => {
         navigation.navigate('information',{id})
     }
+    
     return (
         <TouchableOpacity
             onPress={handleInformation}

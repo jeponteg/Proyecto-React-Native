@@ -6,11 +6,13 @@ import UserStack from './UserStack';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
+
   icon: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  
 });
 
 const Tab = createBottomTabNavigator();

@@ -7,6 +7,7 @@ import { WebView } from 'react-native-webview';
 import { VideoIdContex } from '../../contexts/VideoIdContext';
 
 const styles = StyleSheet.create({
+
     centeredView: {
       flex: 1,
       justifyContent: "center",
@@ -27,12 +28,14 @@ const styles = StyleSheet.create({
       padding: 10,
       marginTop:80
     },
-  });
+
+});
   
 const ModalVideo = () => {
   
     const {modalVisible, setModalVisible} = useContext(MoldalVideoContex)
     const {video} = useContext(VideoIdContex)
+    
     return (
         <View style={styles.centeredView}>
           <Modal

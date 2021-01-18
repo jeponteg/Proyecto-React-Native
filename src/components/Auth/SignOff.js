@@ -4,9 +4,11 @@ import 'firebase/auth'
 import firebase from '../../utils/firebase'
 
 const SignOff = () => {
-    const Logout = () =>{
+
+    const Logout = () => {
         firebase.auth().signOut();
     }
+
     return(
         <View>
           <Button title="Cerrar sesión" onPress={Logout}/>

@@ -3,6 +3,24 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Rating } from 'react-native-ratings';
 import rating from '../../assets/rating.png'
 
+const styles = StyleSheet.create({
+    rating:{
+        marginHorizontal:30,
+        marginTop:10,
+        flexDirection:'row',
+        alignItems:'center'
+    },
+    text:{
+        fontSize:16,
+        marginRight:5,
+        color:'white'
+    },
+    voteCount:{
+        fontSize:12,
+        color:'#8697a5' 
+    }
+})
+
 const MovieRating = ({voteCount,voteAverage}) => {
     
     return (
@@ -24,20 +42,3 @@ const MovieRating = ({voteCount,voteAverage}) => {
 
 export default MovieRating
 
-const styles = StyleSheet.create({
-    rating:{
-        marginHorizontal:30,
-        marginTop:10,
-        flexDirection:'row',
-        alignItems:'center'
-    },
-    text:{
-        fontSize:16,
-        marginRight:5,
-        color:'white'
-    },
-    voteCount:{
-        fontSize:12,
-        color:'#8697a5' 
-    }
-})

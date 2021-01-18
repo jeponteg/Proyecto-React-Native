@@ -1,8 +1,11 @@
-import React from 'react'
-import { StyleSheet, Text, View,Image } from 'react-native'
+import React, { Component } from 'react'
+import { StyleSheet, Text, View,Image,Dimensions } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
 import ModalVideo from './ModalVideo'
 import MovieRating from './MovieRating'
+
+const {height} = Dimensions.get('window');
+const ITEM_HEIGHT = Math.round(height * 0.6)
 
 const styles = StyleSheet.create({
     
@@ -11,7 +14,7 @@ const styles = StyleSheet.create({
     },
     image:{
         width:'100%',
-        height:550,
+        height:ITEM_HEIGHT,
         borderBottomLeftRadius:50,
         borderBottomRightRadius:50
     },
@@ -38,27 +41,31 @@ const styles = StyleSheet.create({
       }
 })
 
-const InformationCard = ({id,title,overview,poster_path,vote_average,vote_count}) => {
+export default class InformationCard extends Component {
 
-    const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
-    
-    return (
-        <>
-            <View style={styles.card}>
-                <Image style={styles.image} source={{uri:imageUrl}}/>
-                <View style={styles.video}>
-                    <ModalVideo />
+    render(){
+
+        const {title,overview,poster_path,vote_average,vote_count} = this.props;
+
+        const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
+        
+        return (
+            <>
+                <View style={styles.card}>
+                    <Image style={styles.image} source={{uri:imageUrl}}/>
+                    <View style={styles.video}>
+                        <ModalVideo />
+                    </View>
+                    
+                    <Text style={styles.title}>{title}</Text>
+
+                    <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
+
+                    <Text style={styles.overview}>{overview}</Text>
                 </View>
-                
-                <Text style={styles.title}>{title}</Text>
-
-                <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
-
-                <Text style={styles.overview}>{overview}</Text>
-            </View>
-        </>
-    )
+            </>
+        )
+    }
 }
 
-export default InformationCard
 

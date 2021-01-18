@@ -34,7 +34,7 @@ const Search = () => {
    
     const [movies,setMovies] = useState([])
     const [search,setSearch] = useState([])
-    console.log(movies)
+   
     useEffect(() => {
         searchMovie(search).then((response) => {
             setMovies(response.results);

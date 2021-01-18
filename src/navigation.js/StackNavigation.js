@@ -14,11 +14,12 @@ const StackNavigation = (props) => {
 
 const {navigation} = props;
     
-    const button = () => {
+    const Button = () => {
+
         return (
             <TouchableOpacity
-            style={{marginLeft:10}}
-             onPress={() => navigation.openDrawer()}>
+                style={{marginLeft:10}}
+                onPress={() => navigation.openDrawer()}>
                 <IconAntDesign 
                     name="menu-fold" 
                     size={30}
@@ -27,7 +28,8 @@ const {navigation} = props;
         )
     }
 
-    const buttonSearch = () => {
+    const ButtonSearch = () => {
+
         return (
             <TouchableOpacity
             style={{marginRight:15}}
@@ -39,6 +41,7 @@ const {navigation} = props;
             </TouchableOpacity> 
         )
     }
+
     return (
         <Stack.Navigator>
 
@@ -47,8 +50,8 @@ const {navigation} = props;
                 component={Home} 
                 options={{
                     title:"Popular Movies",
-                    headerLeft:() => button(),
-                    headerRight:() => buttonSearch()
+                    headerLeft:() => Button(),
+                    headerRight:() => ButtonSearch()
                 }}>
             </Stack.Screen>
 
@@ -57,7 +60,7 @@ const {navigation} = props;
                 component={UpcomingMovies} 
                 options={{
                     title:"Upcoming Movies", 
-                    headerRight:() => buttonSearch()
+                    headerRight:() => ButtonSearch()
                 }}>
             </Stack.Screen> 
 

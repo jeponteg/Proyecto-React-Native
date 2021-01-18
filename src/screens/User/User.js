@@ -3,6 +3,7 @@ import { StyleSheet, Text, SafeAreaView } from 'react-native'
 import ProfileData from '../../components/UserProfile.js/ProfileData'
 
 const styles = StyleSheet.create({
+    
     container:{
         width:'100%',
         flex:1,

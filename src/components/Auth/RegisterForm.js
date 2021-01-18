@@ -2,7 +2,9 @@ import React, {useState} from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import {validateEmail} from '../../utils/validation'
 import firebase from '../../utils/firebase' 
+
 const styles = StyleSheet.create({
+
     btnText:{
         color:'#FFFF',
         fontSize:18,
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     }
 })
+
 const Registerform = ({ChangeForm}) => {
 
     const [formData, setFormData] = useState(defaultValue());

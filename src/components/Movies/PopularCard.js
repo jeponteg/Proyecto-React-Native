@@ -4,6 +4,7 @@ import { BASE_PATH_IMG } from '../../api/constants'
 import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
+    
     card:{
         paddingTop:40,
         shadowColor:'#000',
@@ -14,20 +15,20 @@ const styles = StyleSheet.create({
         shadowOpacity:1,
         shadowRadius:10,
         },
-        image:{
-            width:'100%',
-            height:550,
-            borderRadius:20 
-        },
-        title:{
-            marginHorizontal:10,
-            marginTop:30,
-            color:'white',
-            fontSize:18,
-            textAlign:'center',
-            fontWeight:'bold'
-        }
-    })
+    image:{
+        width:'100%',
+        height:550,
+         borderRadius:20 
+    },
+    title:{
+        marginHorizontal:10,
+        marginTop:30,
+        color:'white',
+        fontSize:18,
+        textAlign:'center',
+        fontWeight:'bold'
+    }
+})
 
 const PopularCard = ({id,title,poster_path}) => {
     
@@ -37,6 +38,7 @@ const PopularCard = ({id,title,poster_path}) => {
     const handleInformation = () => {
         navigation.navigate('information',{id})
     }
+    
     return (
         <TouchableOpacity
             onPress={handleInformation}
