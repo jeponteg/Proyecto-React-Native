@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import { Modal, StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { MoldalVideoContex } from '../../contexts/MoldalVideoContext'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
-import IconOcticons from 'react-native-vector-icons/Octicons';
 import { WebView } from 'react-native-webview';
 import { VideoIdContex } from '../../contexts/VideoIdContext';
 
@@ -48,30 +47,23 @@ const ModalVideo = () => {
           >
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
-              <WebView
-                style={{width:500,}} 
-                source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}/>
+                <WebView
+                  style={{width:500,}} 
+                  source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}
+                />
+
                 <TouchableHighlight
-                style={styles.openButton}
+                  style={styles.openButton}
                   onPress={() => {
                     setModalVisible(!modalVisible);
                   }}
                 >
-                   <IconAntDesign name="closecircle" color="white" size={40}/>
+                  <IconAntDesign name="closecircle" color="white" size={40}/>
                 </TouchableHighlight>
               </View>
             </View>
           </Modal>
-    
-          <TouchableHighlight
-            style={styles.openButton}
-            onPress={() => {
-              setModalVisible(true);
-            }}
-          >
-            <IconOcticons name="device-camera-video" color="white" size={50}/>
 
-          </TouchableHighlight>
         </View>
     );
 };

@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {LogBox} from 'react-native' 
+import { NavigationContainer} from '@react-navigation/native';
 import RootNavigation from './src/navigation.js/RootNavigation';
 import firebase from './src/utils/firebase' 
 import AuthNavigation from './src/navigation.js/AuthNavigation';
@@ -8,6 +9,8 @@ import MoldalVideoContex from './src/contexts/MoldalVideoContext'
 import VideoIdContex  from './src/contexts/VideoIdContext';
 import ProfilePictureContex  from './src/contexts/ProfilePictureContext';
 import "firebase/auth"
+
+LogBox.ignoreAllLogs();
 
 const App = () => {
 

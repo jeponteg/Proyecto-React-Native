@@ -40,13 +40,15 @@ const SearchCard = ({id,title,poster_path}) => {
     const handleInformation = () => {
         navigation.navigate('information',{id})
     }
-    
+
     return (
         <TouchableOpacity
             onPress={handleInformation}
         >
             <View style={styles.card}>
-                <Image style={styles.image} source={{uri:imageUrl}}/>
+                { poster_path ? <Image style={styles.image} source={{uri:imageUrl}}/>  
+                 : <Image style={styles.image}  source={require('../../../src/assets/img2.png')}/>
+                }
                 <Text style={styles.title}>{title}</Text>
             </View>
         </TouchableOpacity>

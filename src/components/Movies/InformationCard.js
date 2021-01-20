@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View,Image,Dimensions } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
+import ButtonShowModal from './ButtonShowModal'
 import ModalVideo from './ModalVideo'
 import MovieRating from './MovieRating'
 
@@ -33,12 +34,15 @@ const styles = StyleSheet.create({
         color: '#8697a5',
         marginBottom:20
       },
-      video:{
-          marginTop:-80,
+    video:{
           justifyContent:'flex-end',
           alignItems:'flex-end',
           marginHorizontal:20,
-      }
+      },
+    ShowModal:{
+          flexDirection:'row',
+          justifyContent:'space-around'
+    }
 })
 
 export default class InformationCard extends Component {
@@ -52,16 +56,20 @@ export default class InformationCard extends Component {
         return (
             <>
                 <View style={styles.card}>
-                    <Image style={styles.image} source={{uri:imageUrl}}/>
+                    <View>
+                        <Image style={styles.image} source={{uri:imageUrl}}/>
+                    </View>
                     <View style={styles.video}>
                         <ModalVideo />
                     </View>
                     
                     <Text style={styles.title}>{title}</Text>
-
-                    <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
-
-                    <Text style={styles.overview}>{overview}</Text>
+                    <View style={styles.ShowModal}>
+                        <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
+                        <ButtonShowModal/> 
+                    </View>
+                    <Text style={styles.overview}>{overview}</Text> 
+                   
                 </View>
             </>
         )
