@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     photo:{
         paddingTop: 20,
         marginBottom:20
-    }
+    },
   });
 
 const Logout = () =>{
@@ -42,14 +42,15 @@ const DrawerContent = ({navigation}) => {
                         <IconMaterialCommunityIcons name="movie-open" size={30} />
                     )}
                 />
-                <DrawerItem
-                    label= "Sign off"
-                    onPress={Logout}
-                    icon={()=>(
-                        <Icon name="sign-out" size={30} />
-                    )}
-                />
-                
+                <View style={styles.sign}>
+                    <DrawerItem
+                        label= "Sign off"
+                        onPress={Logout}
+                        icon={()=>(
+                            <Icon name="sign-out" size={30} />
+                        )}
+                    />
+                </View>
             </SafeAreaView>
         </DrawerContentScrollView>     
     )

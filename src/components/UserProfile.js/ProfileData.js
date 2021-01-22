@@ -1,60 +1,43 @@
-import React,{useState} from 'react'
+import React,{useContext} from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native'
-import firebase from '../../utils/firebase'
-import "firebase/firestore"
-
-firebase.firestore().settings({experimentalAutoDetectLongPolling: true})
-const db = firebase.firestore(firebase);
+import { UserDataContex } from '../../contexts/UserDataContext'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const styles = StyleSheet.create({
-
-    perfil:{
-        alignItems:'center',
-    },
-    input:{
-        alignItems:'center',
-        height:50,
-        width:'80%',
-        marginBottom:20,
-        paddingHorizontal:20,
-        borderRadius:10,
-        fontSize:18,
-        borderWidth:1,
-        borderColor:'#1e3040',
-    },
-    btnText:{
-      
-      fontSize:18,
+  perfil:{
+    alignItems:'center',
   },
-
+  input:{
+    alignItems:'center',
+    height:50,
+    width:'80%',
+    marginBottom:20,
+    paddingHorizontal:20,
+    borderRadius:10,
+    fontSize:18,
+    borderWidth:1,
+    borderColor:'#1e3040',
+  },
+  btnText:{
+    fontSize:18,
+  },
 })
 
 const ProfileData = () => {
 
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [phone, setPhone] = useState('')
-
+  const {firstname,lastname,phone, setFirstname,setLastname, setPhone} = useContext(UserDataContex);
+ 
   const register = () => {
+    storeData(firstname, lastname, phone )     
+  }
 
-    let datos = {};
-
-    if(firstname || lastname || phone ){
-
-        if(firstname) datos.firstname = firstname;
-        if(lastname) datos.lastname = lastname;
-        if(phone) datos.phone = phone;
-       
-        db.collection("datos_perfil")
-        .add(datos)
-        .then(() =>{
-          console.log(ok)
-        })
-        .catch(()=>{
-          console.log("error")
-        })
-    }else{
-        return null
+  const storeData = async (firstname, lastname, phone) => {
+    try {
+      await AsyncStorage.setItem('firstname', firstname)
+      await AsyncStorage.setItem('lastname',  lastname) 
+      await AsyncStorage.setItem('phone',  phone)   
+    } catch (e) {
+      // saving error
     }
   }
 

@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import CameraInterface from '../../components/Photo/CameraInterface'
 import {useNavigation} from '@react-navigation/native';
@@ -41,8 +41,7 @@ const Camera = () => {
         const data = await camera.takePictureAsync(options);
         if (data?.uri) {
             setPhoto(data?.uri)
-            console.log(data?.uri);
-          navigation.pop();
+            navigation.pop();
         }
       };
 

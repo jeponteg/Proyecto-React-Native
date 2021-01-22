@@ -36,35 +36,34 @@ const ModalVideo = () => {
     const {video} = useContext(VideoIdContex)
     
     return (
-        <View style={styles.centeredView}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <WebView
-                  style={{width:500,}} 
-                  source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}
-                />
+      <View style={styles.centeredView}>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <WebView
+                style={{width:500,}} 
+                source={{uri:`https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0`}}
+              />
 
-                <TouchableHighlight
-                  style={styles.openButton}
-                  onPress={() => {
-                    setModalVisible(!modalVisible);
-                  }}
-                >
-                  <IconAntDesign name="closecircle" color="white" size={40}/>
-                </TouchableHighlight>
-              </View>
+              <TouchableHighlight
+                style={styles.openButton}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}
+              >
+                <IconAntDesign name="closecircle" color="white" size={40}/>
+              </TouchableHighlight>
             </View>
-          </Modal>
-
-        </View>
+          </View>
+        </Modal>
+      </View>
     );
 };
 

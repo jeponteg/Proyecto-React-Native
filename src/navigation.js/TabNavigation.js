@@ -43,7 +43,7 @@ const TabNavigation = () => {
           name="User" 
           component={UserStack}
           options={{
-            tabBarIcon: ({focused, color, size}) => {
+            tabBarIcon: ({ color }) => {
               MaterialCommunityIcon.loadFont();
               return (
                 <View style={styles.icon}>

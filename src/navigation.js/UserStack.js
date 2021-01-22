@@ -8,10 +8,10 @@ const Stack =createStackNavigator()
 const UserStack = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen 
+            <Stack.Screen
             	name='user' 
                 component={User} 
-                options={{title:"Profile Data",headerLeft:() => ButtonDrawer()}}
+                options={{title:"Profile Data", headerLeft:() => ButtonDrawer()}}
                 >
             </Stack.Screen> 
         </Stack.Navigator>
