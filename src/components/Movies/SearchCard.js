@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         marginHorizontal:10,
         marginTop:30,
         color:'white',
-        fontSize:18,
+        fontSize:15,
         textAlign:'center',
         fontWeight:'bold'
     }

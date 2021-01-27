@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 const styles = StyleSheet.create({
     
     card:{
-        paddingTop:40,
+        paddingTop:20,
         shadowColor:'#000',
         shadowOffset:{
             width:0,
@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
         },
     image:{
         width:'100%',
-        height:550,
+        height:520,
          borderRadius:20 
     },
     title:{
         marginHorizontal:10,
         marginTop:30,
         color:'white',
-        fontSize:18,
+        fontSize:15,
         textAlign:'center',
         fontWeight:'bold'
     }
