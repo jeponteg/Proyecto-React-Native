@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import { StyleSheet, View,Text, TouchableOpacity, SafeAreaView } from 'react-native'
+import { StyleSheet, View,Text, TouchableOpacity, ScrollView } from 'react-native'
 import getUpComingMovies from '../../api/getUpComingMovies'
 import Movies from '../../components/Movies/Movies'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 const UpcomingMovies = () => {
 
-    const [movies, setMovies] = useState(null)
+    const [movies, setMovies] = useState([])
     const [page, setPage] = useState(1)
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const UpcomingMovies = () => {
     }, [page]);
 
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
 
             <View style={styles.icon}>
 
@@ -58,7 +58,7 @@ const UpcomingMovies = () => {
                     <Movies movies={movies}/>
                 </View>
             )}
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 

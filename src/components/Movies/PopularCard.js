@@ -1,7 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity,Image, Dimensions } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
 import { useNavigation } from '@react-navigation/native';
+
+const {height} = Dimensions.get('window');
+const ITEM_HEIGHT = Math.round(height * 0.64)
 
 const styles = StyleSheet.create({
     
@@ -16,8 +19,9 @@ const styles = StyleSheet.create({
         shadowRadius:10,
         },
     image:{
+        
         width:'100%',
-        height:520,
+        height:ITEM_HEIGHT,
          borderRadius:20 
     },
     title:{
@@ -29,6 +33,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     }
 })
+
 
 const PopularCard = ({id,title,poster_path}) => {
     

@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import { StyleSheet,TextInput ,SafeAreaView, View } from 'react-native'
+import { StyleSheet,TextInput ,ScrollView, View } from 'react-native'
 import searchMovie from '../../api/searchMovie'
 import SearchMovie from '../../components/Movies/SearchMovie'
 
@@ -42,7 +42,7 @@ const Search = () => {
     }, [search]);
 
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.boxInput}>
                 <TextInput
                     style = {styles.input}
@@ -56,7 +56,7 @@ const Search = () => {
                     <SearchMovie movies={movies}/>
                 </View>
             )}
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 

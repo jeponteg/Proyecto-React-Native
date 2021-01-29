@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import { StyleSheet, View,SafeAreaView, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity,ScrollView } from 'react-native'
 import  getNewsMovieApi  from '../../api/movies'
 import Movies from '../../components/Movies/Movies'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
@@ -35,7 +35,7 @@ const Home = () => {
     }, [page]);
 
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
 
             <View style={styles.icon}>
 
@@ -58,7 +58,7 @@ const Home = () => {
                     <Movies movies={movies}/>
                 </View>
             )}
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
