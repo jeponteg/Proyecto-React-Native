@@ -35,7 +35,7 @@ const ProfileData = () => {
     setFirstname(dataFirstname)
     setLastname(dataLastname)
     setPhone(dataPhone)
-    alert('Datos Guardados')
+    alert('Datos Actualizados')
   }
 
   const storeData = async (firstname, lastname, phone) => {
@@ -75,7 +75,7 @@ const ProfileData = () => {
           value={dataPhone} 
         />
         <TouchableOpacity onPress={register}>
-          <Text style={styles.btnText}>Registrate</Text>
+          <Text style={styles.btnText}>Actualizar datos</Text>
         </TouchableOpacity>
       </View>    
     )
