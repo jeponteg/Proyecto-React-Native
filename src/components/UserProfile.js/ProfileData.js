@@ -1,5 +1,5 @@
 import React,{useContext, useState} from 'react'
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, Alert} from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native'
 import { UserDataContex } from '../../contexts/UserDataContext'
 import AsyncStorage from '@react-native-community/async-storage'
 

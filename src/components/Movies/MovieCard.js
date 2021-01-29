@@ -7,7 +7,6 @@ const {height} = Dimensions.get('window');
 const ITEM_HEIGHT = Math.round(height * 0.64)
 
 const styles = StyleSheet.create({
-    
     card:{
         paddingTop:20,
         shadowColor:'#000',
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
 })
 
 
-const PopularCard = ({id,title,poster_path}) => {
+const MovieCard = ({id,title,poster_path}) => {
     
     const imageUrl =`${BASE_PATH_IMG}/w500${poster_path}`
     const navigation = useNavigation();
@@ -54,10 +53,11 @@ const PopularCard = ({id,title,poster_path}) => {
                 }
                 <Text style={styles.title}>{title}</Text>
             </View>
+            
         </TouchableOpacity>
     )
 }
 
-export default PopularCard
+export default MovieCard
 
 

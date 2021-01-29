@@ -6,7 +6,6 @@ import ModalVideo from './ModalVideo'
 import MovieRating from './MovieRating'
 
 const styles = StyleSheet.create({
-    
     card:{ 
         flex:1,
     },
@@ -53,18 +52,22 @@ export default class InformationCard extends Component {
         return (
             <>
                 <View style={styles.card}>
+
                     <View>
                         <Image style={styles.image} source={{uri:imageUrl}}/>
                     </View>
+
                     <View style={styles.video}>
                         <ModalVideo />
                     </View>
                     
                     <Text style={styles.title}>{title}</Text>
+
                     <View style={styles.ShowModal}>
                         <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
                         <ButtonShowModal/> 
                     </View>
+                    
                     <Text style={styles.overview}>{overview}</Text> 
                    
                 </View>

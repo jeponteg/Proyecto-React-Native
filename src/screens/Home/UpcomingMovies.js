@@ -3,10 +3,11 @@ import { StyleSheet, View,Text, TouchableOpacity, ScrollView } from 'react-nativ
 import getUpComingMovies from '../../api/getUpComingMovies'
 import Movies from '../../components/Movies/Movies'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import colors from '../../utils/colors'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#072231',
+        backgroundColor:colors.COLOR_DARK,
         width:'100%',
         flex:1
     },

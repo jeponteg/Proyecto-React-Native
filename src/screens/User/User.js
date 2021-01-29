@@ -1,9 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
+import { StyleSheet, SafeAreaView } from 'react-native'
 import ProfileData from '../../components/UserProfile.js/ProfileData'
 
 const styles = StyleSheet.create({
-    
     container:{
         backgroundColor:'#FFFF',
         width:'100%',

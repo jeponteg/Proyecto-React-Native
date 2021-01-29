@@ -3,10 +3,11 @@ import { StyleSheet, View, Text, TouchableOpacity,ScrollView } from 'react-nativ
 import  getNewsMovieApi  from '../../api/movies'
 import Movies from '../../components/Movies/Movies'
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import colors from '../../utils/colors'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#072231',
+        backgroundColor:colors.COLOR_DARK,
         width:'100%',
         flex:1
     },
@@ -54,7 +55,7 @@ const Home = () => {
             </View>
 
             {movies && (
-                <View>
+                <View style={{ flex:1}}>
                     <Movies movies={movies}/>
                 </View>
             )}

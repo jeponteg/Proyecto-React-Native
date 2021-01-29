@@ -15,20 +15,9 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center'
-    },
-    pendingPreview:{
-        flex:1,
-        backgroundColor:'black',
-        justifyContent:'center',
-        alignItems:'center'
-    }
+    },  
 })
 
-const PendingPreview = () =>{
-    <View style={styles.pendingPreview}>
-        <Text>Esperando</Text>
-    </View>
-}
 
 const Camera = () => {
 

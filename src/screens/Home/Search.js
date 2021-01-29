@@ -2,10 +2,11 @@ import React, {useEffect,useState} from 'react'
 import { StyleSheet,TextInput ,ScrollView, View } from 'react-native'
 import searchMovie from '../../api/searchMovie'
 import SearchMovie from '../../components/Movies/SearchMovie'
+import colors from '../../utils/colors'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#072231',
+        backgroundColor:colors.COLOR_DARK,
         width:'100%',
         flex:1
     },
