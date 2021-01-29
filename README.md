@@ -1,6 +1,6 @@
 # Proyecto-React-Native
 
-## Credenciales para ingresar a la App:
+## Credenciales:
 
 ## Usuario: invitado@gmail.com
 ## password: 123456789
