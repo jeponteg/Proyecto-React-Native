@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native'
 import { UserDataContex } from '../../contexts/UserDataContext'
 import AsyncStorage from '@react-native-community/async-storage'
@@ -24,11 +24,18 @@ const styles = StyleSheet.create({
 })
 
 const ProfileData = () => {
+  const [dataFirstname, setDadafirstname] = useState(null)
+  const [dataLastname, setDadaLastname] = useState(null)
+  const [dataPhone, setDadaPhone] = useState(null)
 
-  const {firstname,lastname,phone, setFirstname,setLastname, setPhone} = useContext(UserDataContex);
+  const {setFirstname,setLastname, setPhone} = useContext(UserDataContex);
  
   const register = () => {
-    storeData(firstname, lastname, phone )     
+    storeData(dataFirstname, dataLastname, dataPhone)
+    setFirstname(dataFirstname)
+    setLastname(dataLastname)
+    setPhone(dataPhone)
+    alert('Datos Guardados')
   }
 
   const storeData = async (firstname, lastname, phone) => {
@@ -39,36 +46,38 @@ const ProfileData = () => {
     } catch (e) {
       // saving error
     }
+    setDadafirstname('')
+    setDadaLastname('')
+    setDadaPhone('')
   }
 
     return (
-        <View style={styles.perfil}>
-            <TextInput
-              style = {styles.input}
-              placeholder='Firstname'
-              placeholderTextColor='#969696'
-              onChangeText={text => setFirstname(text)} 
-            />
-            <TextInput
-              style = {styles.input}
-              placeholder='Lastname'
-              placeholderTextColor='#969696'
-              onChangeText={text => setLastname(text)} 
-            />
-          
-            <TextInput
-              style = {styles.input}
-              placeholder='Phone'
-              placeholderTextColor='#969696'
-              onChangeText={text => setPhone(text)} 
-            />
-
-            <TouchableOpacity onPress={register}>
-                <Text style={styles.btnText}>Registrate</Text>
-            </TouchableOpacity>
-        </View>
-
-        
+      <View style={styles.perfil}>
+        <TextInput
+          style = {styles.input}
+          placeholder='Firstname'
+          placeholderTextColor='#969696'
+          onChangeText={text => setDadafirstname(text)}
+          value={dataFirstname}
+        />
+        <TextInput
+          style = {styles.input}
+          placeholder='Lastname'
+          placeholderTextColor='#969696'
+          onChangeText={text => setDadaLastname(text)}
+          value={dataLastname} 
+        />
+        <TextInput
+          style = {styles.input}
+          placeholder='Phone'
+          placeholderTextColor='#969696'
+          onChangeText={text => setDadaPhone(text)}
+          value={dataPhone} 
+        />
+        <TouchableOpacity onPress={register}>
+          <Text style={styles.btnText}>Registrate</Text>
+        </TouchableOpacity>
+      </View>    
     )
 }
 

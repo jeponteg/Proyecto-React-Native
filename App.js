@@ -9,6 +9,7 @@ import MoldalVideoContex from './src/contexts/MoldalVideoContext'
 import VideoIdContex  from './src/contexts/VideoIdContext';
 import ProfilePictureContex  from './src/contexts/ProfilePictureContext';
 import UserDataContex from './src/contexts/UserDataContext';
+import RNBootSplash from "react-native-bootsplash";
 
 import "firebase/auth"
 
@@ -18,6 +19,11 @@ LogBox.ignoreAllLogs();
 const App = () => {
 
   const [user, setUser] = useState(undefined)
+  useEffect(() => {
+    setTimeout(() => {
+      RNBootSplash.hide({ fade: true });
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((response) =>{

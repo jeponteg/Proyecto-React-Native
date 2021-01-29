@@ -5,10 +5,11 @@ import getVideoById from '../../api/getVideoById'
 import  MovieInformation from '../../components/Movies/MovieInformation'
 import { MoviesIdContex }  from '../../contexts/MoviesIdContext'
 import { VideoIdContex } from '../../contexts/VideoIdContext'
+import colors from '../../utils/colors'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#072231',
+        backgroundColor:colors.COLOR_DARK,
         width:'100%',
     },
     idVideo:{

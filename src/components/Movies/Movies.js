@@ -1,7 +1,7 @@
 import React,{ Component } from 'react'
 import { Dimensions,} from 'react-native'
 import Carousel from 'react-native-snap-carousel'
-import PopularCard from './PopularCard'
+import MovieCard from './MovieCard'
 
 const {width} = Dimensions.get('window');
 const ITEM_WIDTH = Math.round(width * 0.7)
@@ -21,7 +21,7 @@ export default class Movies extends Component  {
                 renderItem={({
                 item: {id,title,poster_path},
                 })=> (
-                    <PopularCard
+                    <MovieCard
                         id={id}
                         title={title}
                         poster_path= {poster_path}

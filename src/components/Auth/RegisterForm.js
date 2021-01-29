@@ -4,7 +4,6 @@ import {validateEmail} from '../../utils/validation'
 import firebase from '../../utils/firebase' 
 
 const styles = StyleSheet.create({
-
     btnText:{
         color:'#FFFF',
         fontSize:18,

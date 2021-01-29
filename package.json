@@ -20,6 +20,7 @@
     "firebase": "^8.2.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-bootsplash": "^3.1.2",
     "react-native-camera": "^3.41.0",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-ratings": "^7.3.0",

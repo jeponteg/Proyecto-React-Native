@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View,Image,Dimensions } from 'react-native'
+import { StyleSheet, Text, View,Image } from 'react-native'
 import { BASE_PATH_IMG } from '../../api/constants'
 import ButtonShowModal from './ButtonShowModal'
 import ModalVideo from './ModalVideo'
 import MovieRating from './MovieRating'
 
-const {height} = Dimensions.get('window');
-const ITEM_HEIGHT = Math.round(height * 0.6)
-
 const styles = StyleSheet.create({
-    
     card:{ 
         flex:1,
     },
     image:{
         width:'100%',
-        height:ITEM_HEIGHT,
+        height:580,
         borderBottomLeftRadius:50,
         borderBottomRightRadius:50
     },
@@ -56,18 +52,22 @@ export default class InformationCard extends Component {
         return (
             <>
                 <View style={styles.card}>
+
                     <View>
                         <Image style={styles.image} source={{uri:imageUrl}}/>
                     </View>
+
                     <View style={styles.video}>
                         <ModalVideo />
                     </View>
                     
                     <Text style={styles.title}>{title}</Text>
+
                     <View style={styles.ShowModal}>
                         <MovieRating voteCount={vote_count} voteAverage={vote_average}/>
                         <ButtonShowModal/> 
                     </View>
+                    
                     <Text style={styles.overview}>{overview}</Text> 
                    
                 </View>

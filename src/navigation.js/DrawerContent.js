@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         marginBottom:20
     },
-  });
+});
 
 const Logout = () =>{
     firebase.auth().signOut();

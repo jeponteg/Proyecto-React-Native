@@ -1,11 +1,12 @@
 import React, {useEffect,useState} from 'react'
-import { StyleSheet,TextInput ,SafeAreaView, View } from 'react-native'
+import { StyleSheet,TextInput ,ScrollView, View } from 'react-native'
 import searchMovie from '../../api/searchMovie'
 import SearchMovie from '../../components/Movies/SearchMovie'
+import colors from '../../utils/colors'
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#072231',
+        backgroundColor:colors.COLOR_DARK,
         width:'100%',
         flex:1
     },
@@ -42,7 +43,7 @@ const Search = () => {
     }, [search]);
 
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.boxInput}>
                 <TextInput
                     style = {styles.input}
@@ -56,7 +57,7 @@ const Search = () => {
                     <SearchMovie movies={movies}/>
                 </View>
             )}
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
